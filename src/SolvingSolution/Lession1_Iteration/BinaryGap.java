@@ -1,4 +1,4 @@
-package SolvingSolution;
+package SolvingSolution.Lession1_Iteration;
 
 /*
  * Binary Gap within a positive integer N is any maximum sequence of consecutive zeros
