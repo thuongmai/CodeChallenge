@@ -13,7 +13,6 @@ import java.util.Map;
  */
 
 public class OddOccurrencesInArray {
-
 	//This take O(N^2) times
 	/*public static int solution (int[] A)
 	{
