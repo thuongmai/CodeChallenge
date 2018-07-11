@@ -38,22 +38,40 @@ class AllSortTest {
 		}
 	}
 	
-	@Test
+	@Test //O(n^2)
 	void testSelectionSort() {
 		assertArrayEquals(SA1, AllSort.SelectionSort(UA1), "Test 1: ");
 		assertArrayEquals(SA2, AllSort.SelectionSort(UA2), "Test 2: ");
 	}
 	
-	@Test
+	@Test //O(n + k)
 	void testCountingSort() {
 		assertArrayEquals(new int[] {1,1,2,2,4,5,7}, AllSort.CountingSort(new int[] {1,4,1,2,7,5,2}), "Test 0: ");
 		assertArrayEquals(SA1, AllSort.CountingSort(UA1), "Test 1: ");
 		assertArrayEquals(SA2, AllSort.CountingSort(UA2), "Test 2: ");
 	}
 
-	@Test
+	@Test //O(n log n)
 	void testMergeSort() {
 		assertArrayEquals(SA1, AllSort.MergeSort(UA1), "Test 1: ");
 		assertArrayEquals(SA2, AllSort.MergeSort(UA2), "Test 2: ");
+	}
+	
+	@Test //O(n log n)
+	void testSortFunction() {
+		assertArrayEquals(SA1, AllSort.SortFunction(UA1), "Test 1: ");
+		assertArrayEquals(SA2, AllSort.SortFunction(UA2), "Test 2: ");
+	}
+	
+	@Test //O(n^2)
+	void testBubbleSort() {
+		assertArrayEquals(SA1, AllSort.BubbleSort(UA1), "Test 1: ");
+		assertArrayEquals(SA2, AllSort.BubbleSort(UA2), "Test 2: ");
+	}
+	
+	@Test //O(n log n)
+	void testQuickSort() {
+		assertArrayEquals(SA1, AllSort.QuickSort(UA1), "Test 1: ");
+		assertArrayEquals(SA2, AllSort.QuickSort(UA2), "Test 2: ");
 	}
 }

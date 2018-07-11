@@ -2,6 +2,7 @@ package SolvingSolution.Lession6_Sorting;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Random;
 
 public class AllSort {
 	private static <T extends Comparable<T>> int Compare(T a, T b) {
@@ -10,6 +11,12 @@ public class AllSort {
 		* Means that the type parameter must support comparison with other instances of its own type
 		*/
 		return a.compareTo(b);
+	}
+	
+	private static void Swap(int[] array, int i, int j) {
+		int temp = array[i];
+		array[i] = array[j];
+		array[j] = temp;
 	}
 	
 	/**Time: O(N^2) 
@@ -83,7 +90,7 @@ public class AllSort {
 	}
 	
 	/**
-	 * Time O(nlogn)
+	 * Time O(nlogn). Example of Divide and Conquer
 	 * @param newArray
 	 * @return sortedArray
 	 */
@@ -109,5 +116,51 @@ public class AllSort {
 			else
 				newArray[i] = secondArray[i1++];
 		}
+	}
+	
+	//Use the function, take O(n log n)
+	public static int[] SortFunction (int[] newArray) {
+		Arrays.sort(newArray);
+		return newArray;
+	}
+	
+	//Simple swap two positions in an array. Take O (N ^ 2)
+	public static int[] BubbleSort (int[] newArray) {
+		if (newArray.length == 0) return null;
+		
+		for (int i = 0; i < newArray.length; i++) {
+			for (int j = i + 1; j < newArray.length; j++) {
+				if (newArray[i] > newArray[j]) {
+					int temp = newArray[j];
+					newArray[j] = newArray[i];
+					newArray[i] = temp;
+				}
+			}
+		}
+		return newArray;
+	}
+	
+	//Example of Divide and Conquer Time O(n logn)
+	//Pick a pivot and partition array into set of elements < x, = x and > x, then recursively sort
+	public static int[] QuickSort (int[] newArray) {
+		if (newArray.length == 0) return null;
+		QuickSort(newArray, 0, newArray.length);
+		return newArray;
+	}
+	private static void QuickSort (int[] newArray, int i, int n) {
+		if (n <= 1) return;
+		int randPivot = newArray[i + new Random().nextInt(n)];
+		int p = i - 1, j = i, q = i + n;
+		while (j < q) {
+			int comp = Compare(newArray[j], randPivot);
+			if (comp < 0)
+				Swap(newArray, j++, ++p);
+			else if (comp > 0)
+				Swap(newArray, j, --q);
+			else
+				j++;
+		}
+		QuickSort(newArray, i, p-i+1);
+		QuickSort(newArray, q, n-(q-i));
 	}
 }
