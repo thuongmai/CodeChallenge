@@ -37,4 +37,37 @@ public class C5 {
 		}
 		return 0;
 	}
+	
+	//This return array of index
+	public static int[] Find3(int[] newArray, int sum) {
+		int[] result = new int[2];
+		int low = 0, high = 0;
+		Vector<Integer> comp = new Vector<Integer>();
+		
+		for (int i = 0; i < newArray.length; i++) {
+			if (comp.contains(newArray[i])) {
+				low = i;
+				high = sum - newArray[i];
+				break;
+			}
+			comp.add(sum - newArray[low]);
+		}
+		System.out.println("Low: " + low + " High: " + high);
+		for (int j = 0; j < newArray.length; j++) {
+			if (newArray[j] == high) {
+				high = j;
+				break;
+			}
+		}
+		System.out.println("Low: " + low + " High: " + high);
+		if (low < high) {
+			result[0] = low;
+			result[1] = high;
+		}
+		else {
+			result[1] = low;
+			result[0] = high;
+		}
+		return result;		
+	}
 }

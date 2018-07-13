@@ -17,5 +17,10 @@ class C5Test {
 		assertEquals(0, C5.Find2(new int[] { 1, 2, 3, 9 }, 8), "Test 3: ");
 		assertEquals(1, C5.Find2(new int[] { 1, 2, 4, 4 }, 8), "Test 4: ");
 	}
+	
+	@Test
+	void testFind3() {
+		assertArrayEquals(new int[] {1,3}, C5.Find3(new int[] { 1, 5, 3, 4 }, 9), "Test 5: ");
+	}
 
 }
