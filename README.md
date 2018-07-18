@@ -1,2 +1,2 @@
-# CodilityPractice
-Solving challenge in Codility
+# Code Challenge
+Solving challenge using Java
