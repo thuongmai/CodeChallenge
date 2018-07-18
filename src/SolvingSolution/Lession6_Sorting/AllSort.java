@@ -149,8 +149,12 @@ public class AllSort {
 	}
 	private static void QuickSort (int[] newArray, int i, int n) {
 		if (n <= 1) return;
-		int randPivot = newArray[i + new Random().nextInt(n)];
-		int p = i - 1, j = i, q = i + n;
+		int rand = i + new Random().nextInt(n);
+		int randPivot = newArray[rand];
+		int p = i - 1, j = i, q = i + n;		
+		
+		System.out.println(Arrays.toString(newArray));
+		
 		while (j < q) {
 			int comp = Compare(newArray[j], randPivot);
 			if (comp < 0)
@@ -159,6 +163,24 @@ public class AllSort {
 				Swap(newArray, j, --q);
 			else
 				j++;
+			System.out.printf("i = %d\t"
+					+ "p = %d\t"
+					+ "j = %d\t"
+					+ "q = %d\t"
+					+ "randPivot = %d\t"
+					+ "newArray[j] = %d\t"
+					+ "comp = %d\t"
+					+ "A = ", i,p,j,q,randPivot,newArray[j],comp);
+			
+			for (int h = 0; h < newArray.length; h++) {
+				if (h == rand)
+					System.out.print("{" + newArray[rand] + "} ");
+				else if (h == j)
+					System.out.print("[" + newArray[h] + "] ");
+				else
+					System.out.print(newArray[h] + " ");
+			}
+			System.out.println();
 		}
 		QuickSort(newArray, i, p-i+1);
 		QuickSort(newArray, q, n-(q-i));
