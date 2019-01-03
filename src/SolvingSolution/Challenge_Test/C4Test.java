@@ -1,8 +1,10 @@
-package SolvingSolution.Challenge;
+package SolvingSolution.Challenge_Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
+
+import SolvingSolution.Challenge.C4;
 
 class C4Test {
 

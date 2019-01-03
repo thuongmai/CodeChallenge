@@ -13,7 +13,7 @@ import java.util.Scanner;
  * - N % q -> THINK
  * - N % p && N % q -> OUTTHINK
  */
-public class C1 {	
+public class ReplaceNumWithText {	
 	public static void main (String[] args) throws IOException {
 		InputStreamReader reader = new InputStreamReader(System.in, StandardCharsets.UTF_8);
 		

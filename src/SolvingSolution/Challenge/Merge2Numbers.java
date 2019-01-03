@@ -1,5 +1,13 @@
 package SolvingSolution.Challenge;
 
+/*
+ * Merge 2 numbers into 1 as follow:
+ * 12 + 56 => 1526
+ * 12345 + 678 => 16273845
+ * if result > 100 000 000 => return -1
+ * Solve: convert integer to string, merge two strings, then convert back to integer.
+ */
+
 public class Merge2Numbers {
 	public static int solution(int A, int B) {
 		int lengthA = countDigits(A);

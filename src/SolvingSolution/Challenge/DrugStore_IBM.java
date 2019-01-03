@@ -14,7 +14,7 @@ import java.util.Vector;
 /*
  * Add input of all data, then return the matched data with initial input
  */
-public class C2 {
+public class DrugStore_IBM {
 	public static void main (String[] args) throws IOException {
 		InputStreamReader reader = new InputStreamReader(System.in, StandardCharsets.UTF_8);
 		BufferedReader in = new BufferedReader(reader);
